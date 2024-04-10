@@ -27,11 +27,11 @@
         </ul>
         <ul>
             <li><a href="#">Roshan Rokaya</a></li>
-            <li class="hideOnMobile"><a href="#">Home</a></li>
-            <li class="hideOnMobile"><a href="#">About</a></li>
-            <li class="hideOnMobile"><a href="#">Languages</a></li>
-            <li class="hideOnMobile"><a href="#">Contacts</a></li>
-            <li class="hideOnMobile"><a href="#">Login</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="#">Home</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="#">About</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="#">Languages</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="#">Contacts</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="#">Login</a></li>
             <li id="button" onclick="showSidebar()"><a href="#">
                     <i class="fa-solid fa-bars" id="btn"></i>
 
@@ -54,12 +54,14 @@
         }
     </script>
     <div class="main-body">
-        <div class="one"><img src="download.png" alt=""></div>
+        <div id="main-part">
+        <div class="one"><img class="images-hover" src="download.png" alt=""></div>
         <div class="text-1">
             <i>Hi, I'm Roshan
-                a Web Designer</i>
+                a Web Designer
+             </i>
         </div>
-        <div class="text-2"> <i>
+        <div class="text-2"> 
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla at quam <br>
             beatae dolores fugiat! Quod, asperiores.
             Nihil explicabo consectetur quas!
@@ -67,8 +69,8 @@
         <div class="action-container">
             <div class="icons">
                 <div class="work-hire">
-                    <button class="btn-1" id="action-btn">MY WORK</button>
-                    <button class="btn-2" id="action-btn">HIRE ME</button>
+                    <button class="btn-1" id="action-btn"><a href="">MY WORK</a></button>
+                    <button class="btn-2" id="action-btn"><a href="">HIRE ME</a></button>
                 </div>
                 <div class="social-medias">
                     <div class="facebook"><a href="https://www.facebook.com/roshan.rokaya.969/about"><i
@@ -86,7 +88,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
     </div>
 
 </body>
