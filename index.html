@@ -16,26 +16,21 @@
         <ul class="sidebar">
             <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Languages</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="/query.html">Queries</a></li>
+            <li><a href="#" onclick="scrollToHeading('lanugages-com')">Languages</a></li>
+            <li><a href="/contacts.html">Contacts</a></li>
+            <li><a href="/login.html">Login</a></li>
         </ul>
         <ul>
             <li><a href="#">Roshan Rokaya</a></li>
             <li id="desktop-nav" class="hideOnMobile"><a href="#">Home</a></li>
-            <li id="desktop-nav" class="hideOnMobile"><a href="#">About</a></li>
-            <li id="desktop-nav" class="hideOnMobile"><a href="#">Languages</a></li>
-            <li id="desktop-nav" class="hideOnMobile"><a href="#">Contacts</a></li>
-            <li id="desktop-nav" class="hideOnMobile"><a href="#">Login</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="/query.html">Queries</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="#" onclick="scrollToHeading('lanugages-com')">
+                    Languages</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="/contacts.html">Contacts</a></li>
+            <li id="desktop-nav" class="hideOnMobile"><a href="/login.html">Login</a></li>
             <li id="button" onclick="showSidebar()"><a href="#">
                     <i class="fa-solid fa-bars" id="btn"></i>
-
-                    <!-- <svg id="btn" xmlns="http://www.w3.org/2000/svg" height="24"
-                        viewBox="0 -960 960 960" width="24" >
-                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                    </svg> -->
-
                 </a></li>
         </ul>
     </nav>
@@ -48,20 +43,42 @@
             const sidebar = document.querySelector('.sidebar')
             sidebar.style.display = 'none'
         }
+
+        function scrollToHeading(headingId) {
+            var headingElement = document.getElementById(headingId);
+            if (headingElement) {
+                var scrollOffset = headingElement.getBoundingClientRect().top + window.scrollY;
+                var startPosition = window.scrollY;
+                var distance = scrollOffset - startPosition;
+                var duration = 400; // Adjust the duration of the scroll animation (in milliseconds)
+
+                var startTime = null;
+                function scrollToTimestamp(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = timestamp - startTime;
+                    var easeInOutQuad = function (t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }; // Easing function for smooth animation
+                    window.scrollTo(0, startPosition + easeInOutQuad(Math.min(progress / duration, 1)) * distance);
+                    if (progress < duration) {
+                        window.requestAnimationFrame(scrollToTimestamp);
+                    }
+                }
+
+                window.requestAnimationFrame(scrollToTimestamp);
+            }
+        }
     </script>
     <div class="main-body">
         <div id="main-part">
-        <div class="one"><img class="images-hover" src="download.png" alt=""></div>
-        <div class="text-1">
-            <i>Hi, I'm Roshan
-                a Web Designer
-             </i>
+            <div class="one"><img class="images-hover" src="download.png" alt=""></div>
+            <div class="text-1">
+                <i>Hi, I'm Roshan</i>
+            </div>
+            <div class="text-2"> 
+                I'm a versatile web developer and programmer, crafting innovative  <br>
+                digital solutions with a blend of creativity and code.
+                Explore my portfolio ......
+            </i></div>
         </div>
-        <div class="text-2"> 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla at quam <br>
-            beatae dolores fugiat! Quod, asperiores.
-            Nihil explicabo consectetur quas!
-        </i></div>
         <div class="action-container">
             <div class="icons">
                 <div class="work-hire">
@@ -84,8 +101,61 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="lanugages-com">
+            <div class="lang-all">
+                <div class="Html">
+                    <div class="container-lang">
+                        <div class="language-icon-background">
+                            <div class="language-icon-container">
+                                <i id="languages-icon" class="fa-brands fa-html5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        It was my first programming language in which
+                        I've mastered little in it. I can easily bulid
+                        and create website. I've done many projects using 
+                        html codes.
+                    </p>
+
+                </div>
+                <div class="C">
+                    <div class="container-lang">
+                        <div class="language-icon-background">
+                            <div class="language-icon-container">
+                                <i id="languages-icon" class="fa-brands fa-c"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        C was my first coding language in which
+                        I've mastered little in it. I can easily bulid
+                        and create a simple game.
+                    </p>
+
+                </div>
+                <div class="Css">
+                    <div class="container-lang">
+                        <div class="language-icon-background">
+                            <div class="language-icon-container">
+                                <i id="languages-icon" class="fa-brands fa-css3"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Css was my first programming language in which
+                        I've mastered little in it with html. I can easily
+                        link it with html. I've developed lots projects with it.
+                    </p>
+
+                </div>
+
+            </div>
+
 
 </body>
 
